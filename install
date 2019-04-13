@@ -1,0 +1,41 @@
+#!/bin/sh
+set -e
+
+function print_title {
+  echo "------------------------------"
+  echo $1
+  echo "------------------------------"
+  sleep 3
+}
+
+
+# dots
+print_title "adding dot-files"
+
+for file in `echo dots/.*`
+do
+  if [ -f "$file" ]; then
+    filename=$(basename "$file")
+
+    echo "----> adding $filename"
+
+    if [ -f "~/$filename" ]; then
+      rm ~/$filename
+    fi
+
+    cp ./$file ~/
+  fi
+done
+
+# scripts
+print_title "installing scripts"
+
+chmod +x scripts/*
+
+for file in `echo scripts/* | sort`
+do
+  echo "--> executing $file"
+
+  ./$file
+done
+
