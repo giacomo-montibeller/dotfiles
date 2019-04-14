@@ -19,3 +19,6 @@ brew install tig
 echo ".... installing diff-so-fancy"
 brew install diff-so-fancy
 brew install autojump
+
+echo ".... installing wget"
+brew install wget
