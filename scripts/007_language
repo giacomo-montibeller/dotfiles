@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo ".... installing java8"
+brew cask install java8
