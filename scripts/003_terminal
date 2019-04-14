@@ -1,12 +1,12 @@
 #!/bin/bash
 
-echo ".... installing iterm2"
-brew cask install iterm2
+# iterm2
+cask_install iterm2
 defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
 defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/dots/.extra-dots/iterm2"
 
-echo ".... installing zsh"
 if ! type "zsh" > /dev/null; then
+  echo ".... installing zsh"
   cd ~
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
   chsh -s $(which zsh) $(whoami)
@@ -14,31 +14,31 @@ if ! type "zsh" > /dev/null; then
   source ~/.zshrc 2/dev/null
 fi
 
+# git
 if ! type "git" > /dev/null; then
-  echo ".... installing git"
-  brew install git
+  brew_install git
 fi
 
-echo ".... installing tig"
-brew install tig
+# tig
+brew_install tig
 
-echo ".... installing diff-so-fancy"
-brew install diff-so-fancy
+# diff-so-fancy
+brew_install diff-so-fancy
 
-echo ".... installing autojump"
-brew install autojump
+# autojump
+brew_install autojump
 
-echo ".... installing git-extras"
-brew install git-extras
+# git-extras
+brew_install git-extras
 
-echo ".... installing wget"
-brew install wget
+# wget
+brew_install wget
 
-echo ".... installing the_silver_searcher"
-brew install the_silver_searcher
+# the_silver_searcher
+brew_install the_silver_searcher
 
-echo ".... installing tree"
-brew install tree
+# tree
+brew_install tree
 
-echo ".... installing bat"
-brew install bat
+# bat
+brew_install bat

@@ -4,19 +4,14 @@ set -e
 command=$1
 dotfiles_dir="$HOME/dotfiles"
 
+. util
+
 if [ -e $dotfiles_dir/.git ]; then
   cd $dotfiles_dir && git pull
 else
   git clone https://github.com/danielefongo/dotfiles.git $dotfiles_dir
   cd $dotfiles_dir
 fi
-
-function print_title {
-  echo "------------------------------"
-  echo $1
-  echo "------------------------------"
-  sleep 3
-}
 
 # dots
 if [[ $command == "all" ]] || [[ $command == "dots" ]]; then
@@ -48,6 +43,6 @@ if [[ $command == "all" ]] || [[ $command == "scripts" ]]; then
   do
     echo "--> executing $file"
 
-    ./$file
+    . $file
   done
 fi

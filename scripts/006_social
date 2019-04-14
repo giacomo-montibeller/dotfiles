@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo ".... installing telegram-desktop"
-brew cask install telegram-desktop
+# telegram
+cask_install telegram-desktop
 
-echo ".... installing slack"
-brew cask install slack
+# slack
+cask_install slack

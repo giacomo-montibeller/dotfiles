@@ -1,5 +1,5 @@
 #!/bin/bash
 
-echo ".... installing cask"
-brew install cask
+# cask
+brew_install cask
 brew tap caskroom/versions
