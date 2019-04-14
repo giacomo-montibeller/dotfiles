@@ -1,6 +1,16 @@
 #!/bin/sh
 set -e
 
+command=$1
+dotfiles_dir="$HOME/dotfiles"
+
+if [ -e $dotfiles_dir/.git ]; then
+  cd $dotfiles_dir && git pull
+else
+  git clone https://github.com/danielefongo/dotfiles.git $dotfiles_dir
+  cd $dotfiles_dir
+fi
+
 function print_title {
   echo "------------------------------"
   echo $1
@@ -8,38 +18,36 @@ function print_title {
   sleep 3
 }
 
-
 # dots
-print_title "adding dot-files"
+if [[ $command == "all" ]] || [[ $command == "dots" ]]; then
+  print_title "linking dot-files"
 
-for file in `echo dots/.*`
-do
-  if [ -f "$file" ]; then
-    filename=$(basename "$file")
+  for file in `echo dots/.*`
+  do
+    if [ -f "$file" ]; then
+      filename=$(basename "$file")
 
-    echo "----> adding $filename"
+      echo "----> linking $filename"
 
-    if [ -f "~/$filename" ]; then
-      rm ~/$filename
+      if [ -f "$HOME/$filename" ]; then
+        rm ~/$filename
+      fi
+
+      ln -s ~/dotfiles/$file ~/$filename
     fi
-
-    cp ./$file ~/
-  fi
-done
-
-echo "----> adding .extra-dots"
-rm -rf ~/.extra-dots
-cp -r ./dots/.extra-dots ~/
+  done
+fi
 
 # scripts
-print_title "installing scripts"
+if [[ $command == "all" ]] || [[ $command == "scripts" ]]; then
+  print_title "installing scripts"
 
-chmod +x scripts/*
+  chmod +x scripts/*
 
-for file in `echo scripts/* | sort`
-do
-  echo "--> executing $file"
+  for file in `echo scripts/* | sort`
+  do
+    echo "--> executing $file"
 
-  ./$file
-done
-
+    ./$file
+  done
+fi

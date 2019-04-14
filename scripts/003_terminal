@@ -3,12 +3,11 @@
 echo ".... installing iterm2"
 brew cask install iterm2
 defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
-defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/.extra-dots/iterm2"
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/dots/.extra-dots/iterm2"
 
 echo ".... installing zsh"
 if ! type "zsh" > /dev/null; then
   cd ~
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
   chsh -s $(which zsh) $(whoami)
   source ~/.bash_profile 2>/dev/null
