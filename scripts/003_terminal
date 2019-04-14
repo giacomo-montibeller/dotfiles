@@ -12,3 +12,32 @@ if ! type "zsh" > /dev/null; then
   source ~/.bash_profile 2>/dev/null
   source ~/.zshrc 2/dev/null
 fi
+
+if ! type "git" > /dev/null; then
+  echo ".... installing git"
+  brew install git
+fi
+
+echo ".... installing tig"
+brew install tig
+
+echo ".... installing diff-so-fancy"
+brew install diff-so-fancy
+
+echo ".... installing autojump"
+brew install autojump
+
+echo ".... installing git-extras"
+brew install git-extras
+
+echo ".... installing wget"
+brew install wget
+
+echo ".... installing the_silver_searcher"
+brew install the_silver_searcher
+
+echo ".... installing tree"
+brew install tree
+
+echo ".... installing bat"
+brew install bat
