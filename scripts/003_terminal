@@ -2,6 +2,8 @@
 
 echo ".... installing iterm2"
 brew cask install iterm2
+defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/.extra-dots/iterm2"
 
 echo ".... installing zsh"
 if ! type "zsh" > /dev/null; then
