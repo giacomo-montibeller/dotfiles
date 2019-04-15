@@ -28,7 +28,7 @@ if [[ $command == "all" ]] || [[ $command == "dots" ]]; then
         rm ~/$filename
       fi
 
-      ln -s ~/dotfiles/$file ~/$filename
+      ln -sf ~/dotfiles/$file ~/$filename
     fi
   done
 fi
