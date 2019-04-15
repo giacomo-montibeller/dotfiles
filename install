@@ -3,6 +3,7 @@ set -e
 
 command=$1
 dotfiles_dir="$HOME/dotfiles"
+plist_file="/Library/LaunchAgents/com.dotfiles.plist"
 
 . util
 
@@ -45,4 +46,25 @@ if [[ $command == "all" ]] || [[ $command == "scripts" ]]; then
 
     . $file
   done
+fi
+
+# startup
+if [[ $command == "all" ]] || [[ $command == "startup" ]]; then
+  print_title "installing startup script"
+
+  echo "--> copying startup file"
+  if [ -f "$HOME/startup" ]; then
+    rm $HOME/startup
+  fi
+
+  cp startup/startup ~/startup
+
+  if [ -f "$plist_file" ]; then
+    sudo rm $plist_file
+  fi
+
+  echo "--> setting plist"
+  cat startup/support/com.dotfiles.plist | sed -E "s/WHOAMI/$(whoami)/g" | sudo cp /dev/stdin $plist_file
+
+  sudo launchctl load -w $plist_file
 fi
