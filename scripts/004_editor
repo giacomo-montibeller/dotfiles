@@ -1,9 +1,12 @@
 #!/bin/bash
-
+. ../util
 # sublime3
 SUBLIME_SETTINGS_PATH=/Users/$(whoami)/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
 SUBLIME_PACKAGES_PATH=/Users/$(whoami)/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
-DOTFILE_SETTINGS_PATH=/Users/$(whoami)/dotfiles/.extra-dots/sublime
+DOTFILE_SETTINGS_PATH=/Users/$(whoami)/dotfiles/dots/.extra-dots/sublime
+
+mkdir -p "$SUBLIME_SETTINGS_PATH"
+mkdir -p "$SUBLIME_PACKAGES_PATH"
 
 cask_install sublime-text
 wget -q https://packagecontrol.io/Package%20Control.sublime-package -O "$SUBLIME_PACKAGES_PATH/Package Control.sublime-package"

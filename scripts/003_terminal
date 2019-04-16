@@ -3,7 +3,7 @@
 # iterm2
 cask_install iterm2
 defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
-defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/dots/.extra-dots/iterm2"
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/dotfiles/dots/.extra-dots/iterm2"
 
 if ! type "zsh" > /dev/null; then
   echo ".... installing zsh"
