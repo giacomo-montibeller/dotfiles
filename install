@@ -57,7 +57,7 @@ if [[ $command == "all" ]] || [[ $command == "startup" ]]; then
     rm $HOME/startup
   fi
 
-  cp startup/startup ~/startup
+  ln -sf ~/dotfiles/startup/startup ~/startup
 
   if [ -f "$plist_file" ]; then
     sudo rm $plist_file
