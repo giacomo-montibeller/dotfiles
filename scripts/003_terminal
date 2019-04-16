@@ -45,3 +45,6 @@ brew_install bat
 
 # tldr
 brew_install tldr
+
+# rmtrash
+brew_install rmtrash
