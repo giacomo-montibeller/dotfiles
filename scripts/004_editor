@@ -1,5 +1,5 @@
 #!/bin/bash
-. ../util
+
 # sublime3
 SUBLIME_SETTINGS_PATH=/Users/$(whoami)/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
 SUBLIME_PACKAGES_PATH=/Users/$(whoami)/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
