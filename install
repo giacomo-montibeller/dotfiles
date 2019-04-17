@@ -2,6 +2,7 @@
 set -e
 
 command=$1
+subcommand=$2
 dotfiles_dir="$HOME/dotfiles"
 plist_file="/Library/LaunchAgents/com.dotfiles.plist"
 
@@ -40,7 +41,14 @@ if [[ $command == "all" ]] || [[ $command == "scripts" ]]; then
 
   chmod +x scripts/*
 
-  for file in `echo scripts/* | sort`
+  files=(`echo scripts/* | sort`)
+  echo $files
+  if [ $subcommand ]; then
+    files=(`echo scripts/$subcommand`)
+  fi
+  echo $files
+
+  for file in $files
   do
     echo "--> executing $file"
 
