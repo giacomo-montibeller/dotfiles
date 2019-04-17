@@ -4,6 +4,7 @@
 	"default_line_ending": "unix",
 	"ensure_newline_at_eof_on_save": true,
 	"font_size": 18,
+	"font_face": "Fira Code Medium",
 	"highlight_line": true,
 	"ignored_packages":
 	[
