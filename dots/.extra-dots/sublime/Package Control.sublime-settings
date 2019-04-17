@@ -6,8 +6,10 @@
 	],
 	"installed_packages":
 	[
+		"BracketHighlighter",
 		"Git",
 		"Material Theme",
-		"Package Control"
+		"Package Control",
+		"SublimeCodeIntel"
 	]
 }
