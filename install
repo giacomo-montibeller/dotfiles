@@ -35,6 +35,22 @@ if [[ $command == "all" ]] || [[ $command == "dots" ]]; then
   done
 fi
 
+# fonts
+if [[ $command == "all" ]] || [[ $command == "fonts" ]]; then
+  print_title "installing fonts"
+
+  chmod +x fonts/*
+
+  for file in `echo fonts/*`
+  do
+    filename=$(basename "$file")
+
+    echo "--> installing $filename"
+
+    . $file
+  done
+fi
+
 # scripts
 if [[ $command == "all" ]] || [[ $command == "scripts" ]]; then
   print_title "installing scripts"
