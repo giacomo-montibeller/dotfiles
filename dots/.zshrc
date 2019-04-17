@@ -11,4 +11,4 @@ source $ZSH/oh-my-zsh.sh
 
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
-source .aliases
+source ~/.aliases
