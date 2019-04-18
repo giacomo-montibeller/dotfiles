@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# jumpcut
+cask_install jumpcut
+defaults write net.sf.Jumpcut "ShortcutRecorder mainHotkey" '{ "keyCode" = 9 ; "modifierFlags" = 1179648; }'

@@ -1,3 +1,4 @@
 #!/bin/bash
 
 open -a dozer
+open -a jumpcut
