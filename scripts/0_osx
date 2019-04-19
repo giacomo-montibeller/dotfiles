@@ -2,6 +2,9 @@
 
 # https://github.com/sindresorhus/mathiasbynens-dotfiles/blob/master/.osx
 
+# Disable GateKeeper
+sudo spctl --master-disable
+
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
