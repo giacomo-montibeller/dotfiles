@@ -3,3 +3,12 @@
 # jumpcut
 cask_install jumpcut
 defaults write net.sf.Jumpcut "ShortcutRecorder mainHotkey" '{ "keyCode" = 9 ; "modifierFlags" = 1179648; }'
+
+# tomighty
+cask_install tomighty
+defaults write org.tomighty.Tomighty org.tomighty.enable_notifications 0
+defaults write org.tomighty.Tomighty org.tomighty.hotkey.start "^\\U2325\\U2318P"
+defaults write org.tomighty.Tomighty org.tomighty.hotkey.stop "^\\U2325\\U2318S"
+defaults write org.tomighty.Tomighty org.tomighty.sound.play_tick_tock_during_break 0
+defaults write org.tomighty.Tomighty org.tomighty.sound.play_tick_tock_during_pomodoro 0
+defaults write org.tomighty.Tomighty org.tomighty.general.status_icon_time_format 1
