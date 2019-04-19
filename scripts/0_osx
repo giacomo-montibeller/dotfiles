@@ -2,9 +2,6 @@
 
 # https://github.com/sindresorhus/mathiasbynens-dotfiles/blob/master/.osx
 
-# Ask for the administrator password upfront
-sudo -v
-
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
@@ -125,7 +122,6 @@ defaults write com.apple.dock orientation -string "left"
 
 for app in "Activity Monitor" "Dock" "Finder" "SizeUp" "SystemUIServer" \
   "Terminal" "Transmission"; do
-  killall "${app}" > /dev/null 2>&1
+  killall "${app}" 2>/dev/null || true
 done
-echo "Done. Note that some of these changes require a logout/restart to take effect."
 

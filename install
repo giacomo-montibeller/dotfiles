@@ -1,5 +1,6 @@
 #!/bin/sh
 set -e
+sudo -v
 
 command=$1
 subcommand=$2
@@ -57,19 +58,20 @@ if [[ $command == "all" ]] || [[ $command == "scripts" ]]; then
 
   chmod +x scripts/*
 
-  files=(`echo scripts/* | sort`)
-  echo $files
-  if [ $subcommand ]; then
-    files=(`echo scripts/$subcommand`)
+  if [[ $subcommand ]]; then
+
+    echo "--> executing $subcommand"
+    . scripts/$subcommand
+  else
+    for file in `echo scripts/*`
+    do
+      filename=$(basename "$file")
+
+      echo "--> executing $filename"
+
+      . $file
+    done
   fi
-  echo $files
-
-  for file in $files
-  do
-    echo "--> executing $file"
-
-    . $file
-  done
 fi
 
 # startup
