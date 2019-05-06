@@ -1,0 +1,4 @@
+#!/bin/bash
+
+brew tap caskroom/fonts
+cask_install font-fira-code
