@@ -11,6 +11,7 @@ antigen bundle sindresorhus/pure
 antigen bundle git
 antigen bundle git-extras
 antigen bundle autojump
+antigen bundle zsh-users/zsh-syntax-highlighting
 
 antigen apply
 
