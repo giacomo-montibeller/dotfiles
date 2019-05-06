@@ -2,3 +2,4 @@
 
 brew tap caskroom/fonts
 cask_install font-fira-code
+cask_install font-source-code-pro
