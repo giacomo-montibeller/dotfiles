@@ -35,9 +35,6 @@ brew_install autojump
 # git-extras
 brew_install git-extras
 
-# wget
-brew_install wget
-
 # the_silver_searcher
 brew_install the_silver_searcher
 
