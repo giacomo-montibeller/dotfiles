@@ -5,7 +5,8 @@ export PATH="/usr/local/Cellar:$PATH"
 
 antigen use oh-my-zsh
 
-antigen theme robbyrussell
+antigen bundle mafredri/zsh-async
+antigen bundle sindresorhus/pure
 
 antigen bundle git
 antigen bundle git-extras
