@@ -1,15 +1,18 @@
-export ZSH=~/.oh-my-zsh
-
-ZSH_THEME="robbyrussell"
-
-plugins=(git)
+source /usr/local/share/antigen/antigen.zsh
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 export PATH="/usr/local/Cellar:$PATH"
 
-source $ZSH/oh-my-zsh.sh
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+antigen use oh-my-zsh
 
-[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+antigen theme robbyrussell
+
+antigen bundle git
+antigen bundle git-extras
+antigen bundle autojump
+
+antigen apply
+
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 source ~/.aliases

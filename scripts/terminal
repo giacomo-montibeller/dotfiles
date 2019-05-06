@@ -9,11 +9,13 @@ defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/dotfiles/d
 if ! type "zsh" > /dev/null; then
   echo ".... installing zsh"
   cd ~
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
   chsh -s $(which zsh) $(whoami)
   source ~/.bash_profile 2>/dev/null
   source ~/.zshrc 2/dev/null
 fi
+
+# antigen
+brew_install antigen
 
 # zsh-autosuggestions
 brew_install zsh-autosuggestions
