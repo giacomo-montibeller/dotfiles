@@ -5,13 +5,12 @@ export PATH="/usr/local/Cellar:$PATH"
 
 antigen use oh-my-zsh
 
-antigen bundle mafredri/zsh-async
-antigen bundle sindresorhus/pure
-
 antigen bundle git
 antigen bundle git-extras
 antigen bundle autojump
 antigen bundle zsh-users/zsh-syntax-highlighting
+
+antigen bundle danielefongo/zpure
 
 antigen apply
 
