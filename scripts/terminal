@@ -17,9 +17,6 @@ fi
 # antigen
 brew_install antigen
 
-# zsh-autosuggestions
-brew_install zsh-autosuggestions
-
 # git
 if ! type "git" > /dev/null; then
   brew_install git
