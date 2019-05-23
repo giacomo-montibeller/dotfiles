@@ -11,3 +11,6 @@ antigen bundle danielefongo/zpure
 antigen apply
 
 source ~/.aliases
+if [[ -f "$HOME/.custom_aliases" ]]; then
+  source "$HOME/.custom_aliases"
+fi
