@@ -19,3 +19,6 @@ if [ -f "$SUBLIME_PACKAGES_PATH/Package Control.sublime-settings" ]; then
 fi
 ln -sf "$DOTFILE_SETTINGS_PATH/Package Control.sublime-settings" "$SUBLIME_SETTINGS_PATH/Package Control.sublime-settings"
 ln -sf "$DOTFILE_SETTINGS_PATH/Preferences.sublime-settings" "$SUBLIME_SETTINGS_PATH/Preferences.sublime-settings"
+
+# idea
+cask_install intellij-idea-ce
