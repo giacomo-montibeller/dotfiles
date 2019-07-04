@@ -7,7 +7,7 @@ antigen bundle git-extras
 antigen bundle autojump
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle danielefongo/zpure
+antigen bundle danielefongo/shapeshift
 antigen apply
 
 source ~/.aliases
