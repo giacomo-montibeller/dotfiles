@@ -12,3 +12,6 @@ defaults write org.tomighty.Tomighty org.tomighty.hotkey.stop "^\\U2325\\U2318S"
 defaults write org.tomighty.Tomighty org.tomighty.sound.play_tick_tock_during_break 0
 defaults write org.tomighty.Tomighty org.tomighty.sound.play_tick_tock_during_pomodoro 0
 defaults write org.tomighty.Tomighty org.tomighty.general.status_icon_time_format 1
+
+# ngrok
+cask_install ngrok
