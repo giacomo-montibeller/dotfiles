@@ -9,7 +9,7 @@ mkdir -p "$SUBLIME_SETTINGS_PATH"
 mkdir -p "$SUBLIME_PACKAGES_PATH"
 
 cask_install sublime-text
-wget -q https://packagecontrol.io/Package%20Control.sublime-package -O "$SUBLIME_PACKAGES_PATH/Package Control.sublime-package"
+curl -s https://packagecontrol.io/Package%20Control.sublime-package -o "$SUBLIME_PACKAGES_PATH/Package Control.sublime-package"
 
 if [ -f "$SUBLIME_SETTINGS_PATH/Preferences.sublime-settings" ]; then
 	rm "$SUBLIME_SETTINGS_PATH/Preferences.sublime-settings"

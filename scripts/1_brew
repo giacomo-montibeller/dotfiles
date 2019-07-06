@@ -5,8 +5,5 @@ if ! type "brew" > /dev/null; then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-# wget
-brew_install wget
-
 echo ".... updating brew"
 brew update && brew upgrade && brew cleanup
