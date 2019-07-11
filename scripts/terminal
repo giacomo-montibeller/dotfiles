@@ -9,13 +9,8 @@ defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
 defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/dotfiles/dots/.extra-dots/iterm2"
 
 # zsh
-if ! type "zsh" > /dev/null; then
-  echo ".... installing zsh"
-  cd ~
-  chsh -s $(which zsh) $(whoami)
-  source ~/.bash_profile 2>/dev/null
-  source ~/.zshrc 2/dev/null
-fi
+brew_install zsh
+sudo chsh -s $(which zsh) $(whoami)
 
 # antigen
 brew_install antigen
