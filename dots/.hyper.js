@@ -9,7 +9,7 @@ module.exports = {
   },
 
   plugins: [
-  'hyper-search', 'hyperline', 'hypercwd', 'hyperterm-tabs', "hyper-snazzy", 'hyper-solarized-dark-highcontrast'],
+  'hyper-search', 'hyperline', 'hypercwd', 'hyperterm-tabs', 'hyper-solarized-dark-highcontrast'],
 
   localPlugins: []
 };
