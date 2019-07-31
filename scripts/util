@@ -15,3 +15,9 @@ defaults write org.tomighty.Tomighty org.tomighty.general.status_icon_time_forma
 
 # ngrok
 cask_install ngrok
+
+# mos
+cask_install mos
+defaults write com.caldis.Mos reverse 0
+defaults write com.caldis.Mos step 40
+defaults write com.caldis.Mos duration 4.3
