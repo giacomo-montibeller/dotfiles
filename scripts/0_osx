@@ -123,8 +123,7 @@ defaults write com.apple.dock orientation -string "left"
 # Kill affected applications                                                  #
 ###############################################################################
 
-for app in "Activity Monitor" "Dock" "Finder" "SizeUp" "SystemUIServer" \
-  "Terminal" "Transmission"; do
+for app in "Activity Monitor" "Dock" "Finder" "SizeUp" "SystemUIServer" "Transmission"; do
   killall "${app}" 2>/dev/null || true
 done
 
