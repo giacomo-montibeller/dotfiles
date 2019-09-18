@@ -1,6 +1,6 @@
 #!/bin/bash
 
 # java8, maven and gradle
-cask_install java8
+cask_install adoptopenjdk/openjdk/adoptopenjdk8
 brew_install maven
 brew_install gradle
