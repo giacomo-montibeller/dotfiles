@@ -1,0 +1,21 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+      force: true
+    shell:
+      stdout: true
+      stdin: true
+
+- link:
+    ~/.aliases: dots/.aliases
+    ~/.gitconfig: dots/.gitconfig
+    ~/.hyper.js: dots/.hyper.js
+    ~/.zshrc: dots/.zshrc
+    ~/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings: 'dots/.extra-dots/sublime/Preferences.sublime-settings'
+    ~/Library/Application Support/Sublime Text 3/Installed Packages/Package Control.sublime-package: 'dots/.extra-dots/sublime/Package Control.sublime-package'
+    ~/Library/Application Support/Sublime Text 3/Installed Packages/Package Control.sublime-settings: 'dots/.extra-dots/sublime/Package Control.sublime-settings'
+
+- shell: 
+  - [sh old_install startup]
+  - [sh old_install scripts]

@@ -1,24 +1,7 @@
 #!/bin/bash
 
 # sublime3
-SUBLIME_SETTINGS_PATH=/Users/$(whoami)/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
-SUBLIME_PACKAGES_PATH=/Users/$(whoami)/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
-DOTFILE_SETTINGS_PATH=/Users/$(whoami)/dotfiles/dots/.extra-dots/sublime
-
-mkdir -p "$SUBLIME_SETTINGS_PATH"
-mkdir -p "$SUBLIME_PACKAGES_PATH"
-
 cask_install sublime-text
-curl -s https://packagecontrol.io/Package%20Control.sublime-package -o "$SUBLIME_PACKAGES_PATH/Package Control.sublime-package"
-
-if [ -f "$SUBLIME_SETTINGS_PATH/Preferences.sublime-settings" ]; then
-	rm "$SUBLIME_SETTINGS_PATH/Preferences.sublime-settings"
-fi
-if [ -f "$SUBLIME_PACKAGES_PATH/Package Control.sublime-settings" ]; then
-	rm "$SUBLIME_PACKAGES_PATH/Package Control.sublime-settings"
-fi
-ln -sf "$DOTFILE_SETTINGS_PATH/Package Control.sublime-settings" "$SUBLIME_SETTINGS_PATH/Package Control.sublime-settings"
-ln -sf "$DOTFILE_SETTINGS_PATH/Preferences.sublime-settings" "$SUBLIME_SETTINGS_PATH/Preferences.sublime-settings"
 
 # idea
 cask_install intellij-idea-ce

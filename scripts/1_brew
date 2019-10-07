@@ -6,4 +6,4 @@ if ! type "brew" > /dev/null; then
 fi
 
 echo ".... updating brew"
-brew update && brew upgrade && brew cleanup
+brew update && brew upgrade && brew cleanup || true

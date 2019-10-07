@@ -1,0 +1,80 @@
+#!/bin/sh
+set -e
+sudo -v
+
+command=$1
+subcommand=$2
+dotfiles_dir="$HOME/dotfiles"
+plist_file="/Library/LaunchAgents/com.dotfiles.plist"
+
+. util
+
+if [ -e $dotfiles_dir/.git ]; then
+  cd $dotfiles_dir && git pull
+else
+  git clone https://github.com/danielefongo/dotfiles.git $dotfiles_dir
+  cd $dotfiles_dir
+fi
+
+# dots
+if [[ $command == "all" ]] || [[ $command == "dots" ]]; then
+  print_title "linking dot-files"
+
+  for file in `echo dots/.*`
+  do
+    if [ -f "$file" ]; then
+      filename=$(basename "$file")
+
+      echo "----> linking $filename"
+
+      if [ -f "$HOME/$filename" ]; then
+        rm ~/$filename
+      fi
+
+      ln -sf ~/dotfiles/$file ~/$filename
+    fi
+  done
+fi
+
+# scripts
+if [[ $command == "all" ]] || [[ $command == "scripts" ]]; then
+  print_title "installing scripts"
+
+  chmod +x scripts/*
+
+  if [[ $subcommand ]]; then
+
+    echo "--> executing $subcommand"
+    . scripts/$subcommand
+  else
+    for file in `echo scripts/*`
+    do
+      filename=$(basename "$file")
+
+      echo "--> executing $filename"
+
+      . $file
+    done
+  fi
+fi
+
+# startup
+if [[ $command == "all" ]] || [[ $command == "startup" ]]; then
+  print_title "installing startup script"
+
+  echo "--> copying startup file"
+  if [ -f "$HOME/startup" ]; then
+    rm $HOME/startup
+  fi
+
+  ln -sf ~/dotfiles/startup/startup ~/startup
+
+  if [ -f "$plist_file" ]; then
+    sudo rm $plist_file
+  fi
+
+  echo "--> setting plist"
+  cat startup/support/com.dotfiles.plist | sed -E "s/WHOAMI/$(whoami)/g" | sudo cp /dev/stdin $plist_file
+
+  sudo launchctl load -w $plist_file
+fi
