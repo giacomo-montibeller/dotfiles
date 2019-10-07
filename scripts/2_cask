@@ -2,4 +2,4 @@
 
 # cask
 brew_install cask
-brew tap caskroom/versions
+brew tap homebrew/cask-versions

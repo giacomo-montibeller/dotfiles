@@ -1,5 +1,5 @@
 #!/bin/bash
 
-brew tap caskroom/fonts
+brew tap homebrew/cask-fonts
 cask_install font-fira-code
 cask_install font-source-code-pro
