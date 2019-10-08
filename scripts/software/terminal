@@ -6,7 +6,7 @@ cask_install hyper
 # iterm2
 cask_install iterm2
 defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
-defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/dotfiles/dots/.extra-dots/iterm2"
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/dotfiles/conf/dots/iterm2"
 
 # zsh
 brew_install zsh

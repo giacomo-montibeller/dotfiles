@@ -1,0 +1,15 @@
+#!/bin/sh
+set -e
+. util
+
+print_title "installing software"
+
+chmod +x scripts/software/*
+for file in `echo scripts/software/*`
+do
+    filename=$(basename "$file")
+
+    echo "--> executing $filename"
+
+    . $file
+done
