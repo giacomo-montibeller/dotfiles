@@ -8,3 +8,6 @@ cask_install intellij-idea-ce
 
 # visual studio code
 cask_install visual-studio-code
+
+# neovim
+brew_install neovim
