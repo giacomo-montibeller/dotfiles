@@ -11,3 +11,8 @@ cask_install visual-studio-code
 
 # neovim
 brew_install neovim
+
+curl -sfLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+nvim +PlugInstall +qall
