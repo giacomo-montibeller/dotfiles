@@ -5,3 +5,6 @@ cask_install sublime-text
 
 # idea
 cask_install intellij-idea-ce
+
+# visual studio code
+cask_install visual-studio-code
