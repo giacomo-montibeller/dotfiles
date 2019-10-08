@@ -18,5 +18,7 @@
     ~/Library/Application Support/Sublime Text 3/Installed Packages/Package Control.sublime-settings: 'conf/dots/sublime/Package Control.sublime-settings'
 
 - shell: 
+  - [sh scripts/osx]
+  - [sh scripts/brew]
   - [sh scripts/startup]
   - [sh scripts/install]

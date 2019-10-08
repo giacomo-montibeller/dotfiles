@@ -1,12 +1,5 @@
 #!/bin/bash
 
-function print_title {
-  echo "------------------------------"
-  echo $1
-  echo "------------------------------"
-  sleep 3
-}
-
 function brew_install() {
 	if [ -z "`brew list | grep ^$1$`" ]; then
 		echo ".... installing $1"

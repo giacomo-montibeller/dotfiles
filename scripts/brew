@@ -7,3 +7,7 @@ fi
 
 echo ".... updating brew"
 brew update && brew upgrade && brew cleanup || true
+
+# cask
+brew_install cask
+brew tap homebrew/cask-versions

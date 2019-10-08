@@ -1,5 +1,0 @@
-#!/bin/bash
-
-# cask
-brew_install cask
-brew tap homebrew/cask-versions
