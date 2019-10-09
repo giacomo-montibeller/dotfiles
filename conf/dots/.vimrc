@@ -4,10 +4,23 @@ filetype off
 " Specify a directory for plugins
 call plug#begin('~/.local/share/nvim/plugged')
 
+Plug 'scrooloose/nerdtree'
 Plug 'iCyMind/NeoSolarized'
 
 " Initialize plugin system
 call plug#end()
+
+" NERDTree
+map <C-e> :NERDTreeToggle<CR> " Toggle on ctrl-e
+map <leader>f :NERDTreeFind<CR> " Toggle in find mode
+let NERDTreeShowHidden=1 " Show hidden files
+let NERDTreeQuitOnOpen=1 " Hide after selection
+" Open a NERDTree automatically when vim starts up if no files were specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" Improve UI
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
 
 " ==== Appearance ====
 
