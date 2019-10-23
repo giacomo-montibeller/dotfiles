@@ -5,7 +5,7 @@ source /usr/local/share/antigen/antigen.zsh
 antigen bundle git
 antigen bundle git-extras
 antigen bundle autojump
-antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zdharma/fast-syntax-highlighting 
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle danielefongo/shapeshift
 antigen apply
