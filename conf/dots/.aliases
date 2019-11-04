@@ -1,2 +1,9 @@
 alias trash="rmtrash"
 alias vim="nvim"
+
+alias ll="ls -la"
+alias gw="./gradlew"
+alias v="vagrant"
+alias gpush="git push --no-verify"
+alias gpr="git pull --rebase"
+alias lucky="/Users/giacomo-montibeller/Documents/lucky/lucky"

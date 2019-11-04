@@ -117,7 +117,7 @@ defaults write com.apple.dock magnification -int 1
 defaults write com.apple.dock mineffect -string "scale"
 
 # Put dock on left
-defaults write com.apple.dock orientation -string "left"
+defaults write com.apple.dock orientation -string "bottom"
 
 ###############################################################################
 # Kill affected applications                                                  #

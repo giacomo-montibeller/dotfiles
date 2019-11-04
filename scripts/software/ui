@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# dozer
-cask_install dozer
-
 # flux
 cask_install flux
 defaults write org.herf.Flux dayColorTemp 5800

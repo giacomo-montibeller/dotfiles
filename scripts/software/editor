@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# sublime3
-cask_install sublime-text
-
 # idea
 cask_install intellij-idea-ce
 

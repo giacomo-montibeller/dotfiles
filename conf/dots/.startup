@@ -1,6 +1,6 @@
 #!/bin/bash
 
-open -a dozer
 open -a jumpcut
 open -a tomighty
 open -a spectacle
+open -a mos
